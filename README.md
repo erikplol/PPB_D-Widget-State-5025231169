@@ -42,3 +42,44 @@ Simple Flutter app that demonstrates basic layout widgets and local state update
 - `_QuestionSection` (`StatelessWidget`): Question text block.
 - `_CategorySection` (`StatelessWidget`): Category row block.
 - `_CategoryItem` (`StatelessWidget`): Reusable icon + label item used in categories.
+
+## Widget Tree
+
+```text
+runApp
+`-- MaterialApp
+	`-- Home (StatelessWidget)
+		`-- Scaffold
+			|-- AppBar
+			|   `-- Text("My first app")
+			`-- Column
+				|-- _ImageSection
+				|   `-- Container
+				|       `-- Image.asset("assets/image.png")
+				|-- _QuestionSection
+				|   `-- Container
+				|       `-- Text("What image is that?")
+				|-- _CategorySection
+				|   `-- Container
+				|       `-- Row
+				|           |-- _CategoryItem(Food)
+				|           |   `-- Column
+				|           |       |-- Icon(Icons.fastfood)
+				|           |       `-- Text("Food")
+				|           |-- SizedBox(width: 20)
+				|           |-- _CategoryItem(Scenery)
+				|           |   `-- Column
+				|           |       |-- Icon(Icons.landscape)
+				|           |       `-- Text("Scenery")
+				|           |-- SizedBox(width: 20)
+				|           `-- _CategoryItem(People)
+				|               `-- Column
+				|                   |-- Icon(Icons.people)
+				|                   `-- Text("People")
+				`-- _CounterSection (StatefulWidget)
+					`-- Container
+						`-- Row
+							|-- Text("Counter here: <value>")
+							`-- ElevatedButton
+								`-- Text("+")
+```
