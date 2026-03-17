@@ -1,16 +1,44 @@
-# flutter_application_1
+# Widget State
 
-A new Flutter project.
+Simple Flutter app that demonstrates basic layout widgets and local state updates using a counter button.
 
-## Getting Started
+## App Structure
 
-This project is a starting point for a Flutter application.
+- Entry point: `lib/main.dart`
+- Main screen: `lib/home.dart`
 
-A few resources to get you started if this is your first Flutter project:
+## Widgets Used In This Project
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Root And App-Level Widgets
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `MaterialApp`: Root Material Design app wrapper created in `main.dart`.
+- `Home` (`StatelessWidget`): Main screen widget that composes all UI sections.
+- `Scaffold`: Provides the basic page structure (app bar + body).
+- `AppBar`: Top navigation/title bar.
+
+### Layout Widgets
+
+- `Column`: Stacks sections vertically in the page body.
+- `Row`: Lays out category items and counter content horizontally.
+- `Container`: Adds spacing, background color, and section-level styling.
+- `SizedBox`: Adds fixed horizontal gaps between category items.
+
+### Content Widgets
+
+- `Text`: Displays titles, labels, and the counter value.
+- `Image.asset`: Displays local image from `assets/image.png`.
+- `Icon`: Shows category icons (`fastfood`, `landscape`, `people`).
+
+### Interaction And State Widgets
+
+- `ElevatedButton`: Counter increment button (`+`).
+- `_CounterSection` (`StatefulWidget`): Owns mutable counter state.
+- `_CounterSectionState` (`State<_CounterSection>`): Stores and updates `_counter`.
+- `setState()`: Triggers rebuild when the counter value changes.
+
+### Reusable Section Widgets
+
+- `_ImageSection` (`StatelessWidget`): Image display block.
+- `_QuestionSection` (`StatelessWidget`): Question text block.
+- `_CategorySection` (`StatelessWidget`): Category row block.
+- `_CategoryItem` (`StatelessWidget`): Reusable icon + label item used in categories.
